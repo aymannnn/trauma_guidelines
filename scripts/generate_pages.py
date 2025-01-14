@@ -49,7 +49,7 @@ os.makedirs("docs", exist_ok=True)
 
 # Generate the HTML files for each category
 for filename, title in categories:
-    with open(f"docs/{filename}.html", "w") as file:
+    with open(f"docs/pages/{filename}.html", "w") as file:
         file.write(category_template.format(title=title))
 
 print("Category pages generated successfully.")

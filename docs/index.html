@@ -22,14 +22,16 @@
 
         .button-container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
         }
 
-        button {
-            margin: 5px 0;
+        .button-container button {
+            margin: 5px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            flex: 1 1 calc(50% - 10px);
+            /* Two columns */
         }
     </style>
 </head>
@@ -40,24 +42,24 @@
         guidelines are NOT associated with any institution and the institution of the authors is not associated with
         this project.</p>
     <div class="button-container">
-        <button onclick="location.href='all_guidelines.html'">All Guidelines</button>
-        <button onclick="location.href='adult_trauma_surgery.html'">Adult Trauma Surgery</button>
-        <button onclick="location.href='head.html'">Head</button>
-        <button onclick="location.href='neck.html'">Neck</button>
-        <button onclick="location.href='chest.html'">Chest</button>
-        <button onclick="location.href='abdomen.html'">Abdomen</button>
-        <button onclick="location.href='pelvis.html'">Pelvis</button>
-        <button onclick="location.href='spine.html'">Spine</button>
-        <button onclick="location.href='extremities.html'">Extremities</button>
-        <button onclick="location.href='other_adult_trauma.html'">Other Adult Trauma</button>
-        <button onclick="location.href='pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
-        <button onclick="location.href='orthopedic_surgery.html'">Orthopedic Surgery</button>
-        <button onclick="location.href='neurosurgery.html'">Neurosurgery</button>
-        <button onclick="location.href='emergency_medicine.html'">Emergency Medicine</button>
-        <button onclick="location.href='ent.html'">ENT</button>
-        <button onclick="location.href='vascular_surgery.html'">Vascular Surgery</button>
-        <button onclick="location.href='administrative.html'">Administrative</button>
-        <button onclick="location.href='outside_resources.html'">Outside Resources</button>
+        <button onclick="location.href='pages/all_guidelines.html'">All Guidelines</button>
+        <button onclick="location.href='pages/adult_trauma_surgery.html'">Adult Trauma Surgery</button>
+        <button onclick="location.href='pages/head.html'">Head</button>
+        <button onclick="location.href='pages/neck.html'">Neck</button>
+        <button onclick="location.href='pages/chest.html'">Chest</button>
+        <button onclick="location.href='pages/abdomen.html'">Abdomen</button>
+        <button onclick="location.href='pages/pelvis.html'">Pelvis</button>
+        <button onclick="location.href='pages/spine.html'">Spine</button>
+        <button onclick="location.href='pages/extremities.html'">Extremities</button>
+        <button onclick="location.href='pages/other_adult_trauma.html'">Other Adult Trauma</button>
+        <button onclick="location.href='pages/pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
+        <button onclick="location.href='pages/orthopedic_surgery.html'">Orthopedic Surgery</button>
+        <button onclick="location.href='pages/neurosurgery.html'">Neurosurgery</button>
+        <button onclick="location.href='pages/emergency_medicine.html'">Emergency Medicine</button>
+        <button onclick="location.href='pages/ent.html'">ENT</button>
+        <button onclick="location.href='pages/vascular_surgery.html'">Vascular Surgery</button>
+        <button onclick="location.href='pages/administrative.html'">Administrative</button>
+        <button onclick="location.href='pages/outside_resources.html'">Outside Resources</button>
     </div>
 </body>
 
