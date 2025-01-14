@@ -29,7 +29,7 @@ category_template = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
+    <title>{title} - PDF Repository</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
         .logo {{
@@ -42,11 +42,9 @@ category_template = """<!DOCTYPE html>
 </head>
 
 <body>
-    <img src="../logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="../../logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <ul>
-        <!-- Add PDFs for {title} here -->
-    </ul>
+    {content}
     <button onclick="location.href='../index.html'">Back to Home</button>
 </body>
 
@@ -58,7 +56,26 @@ os.makedirs("docs/pages", exist_ok=True)
 
 # Generate the HTML files for each category
 for filename, title in categories:
+    if filename == "adult_trauma_surgery":
+        content = """
+        <div class="button-container">
+            <button onclick="location.href='head.html'">Head</button>
+            <button onclick="location.href='neck.html'">Neck</button>
+            <button onclick="location.href='chest.html'">Chest</button>
+            <button onclick="location.href='abdomen.html'">Abdomen</button>
+            <button onclick="location.href='pelvis.html'">Pelvis</button>
+            <button onclick="location.href='spine.html'">Spine</button>
+            <button onclick="location.href='extremities.html'">Extremities</button>
+            <button onclick="location.href='other_adult_trauma.html'">Other Adult Trauma</button>
+        </div>
+        """
+    else:
+        content = """
+        <ul>
+            <!-- Add PDFs for {title} here -->
+        </ul>
+        """
     with open(f"docs/pages/{filename}.html", "w") as file:
-        file.write(category_template.format(title=title))
+        file.write(category_template.format(title=title, content=content))
 
 print("Category pages generated successfully.")
