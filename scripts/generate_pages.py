@@ -29,11 +29,20 @@ category_template = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Guidelines</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>{title}</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .logo {{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px; /* Adjust the size as needed */
+        }}
+    </style>
 </head>
 
 <body>
+    <img src="../logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
     <ul>
         <!-- Add PDFs for {title} here -->
@@ -44,8 +53,8 @@ category_template = """<!DOCTYPE html>
 </html>
 """
 
-# Create the docs directory if it doesn't exist
-os.makedirs("docs", exist_ok=True)
+# Create the docs/pages directory if it doesn't exist
+os.makedirs("docs/pages", exist_ok=True)
 
 # Generate the HTML files for each category
 for filename, title in categories:
