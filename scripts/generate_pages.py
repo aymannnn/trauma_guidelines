@@ -29,7 +29,7 @@ category_template = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - PDF Repository</title>
+    <title>{title}</title>
     <link rel="stylesheet" href="../styles.css">
     <style>
         .logo {{
@@ -42,10 +42,10 @@ category_template = """<!DOCTYPE html>
 </head>
 
 <body>
-    <img src="../../logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="../logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    {content}
     <button onclick="location.href='../index.html'">Back to Home</button>
+    {content}
 </body>
 
 </html>
