@@ -24,3 +24,27 @@ p {
     flex: 1 1 calc(50% - 10px);
     /* Two columns */
 }
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    /* Adjust the size as needed */
+}
+
+@media (max-width: 600px) {
+    .logo {
+        position: static;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-container button {
+        flex: 1 1 100%;
+    }
+}
