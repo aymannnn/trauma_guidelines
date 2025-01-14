@@ -3,48 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Repository</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function showCategory(category) {
-            var categories = document.getElementsByClassName('category');
-            for (var i = 0; i < categories.length; i++) {
-                categories[i].style.display = 'none';
-            }
-            document.getElementById(category).style.display = 'block';
-        }
-    </script>
 </head>
 
 <body>
     <h1>Trauma Guidelines</h1>
-    <p>Please refer to your institution for specific guidelines. This repository serves as a reference.</p>
+    <p>Please refer to your institution for specific guidelines. This repository serves as a reference only. These
+        guidelines are NOT associated with any institution and the institution of the authors is not associated with
+        this project.</p>
     <div>
-        <button onclick="showCategory('category1')">Category 1</button>
-        <button onclick="showCategory('category2')">Category 2</button>
-        <button onclick="showCategory('category3')">Category 3</button>
-    </div>
-    <div id="category1" class="category" style="display:none;">
-        <h2>Category 1</h2>
-        <ul>
-            <li><a href="pdfs/example1.pdf" target="_blank">Example PDF 1</a></li>
-            <!-- Add more PDFs for Category 1 here -->
-        </ul>
-    </div>
-    <div id="category2" class="category" style="display:none;">
-        <h2>Category 2</h2>
-        <ul>
-            <li><a href="pdfs/example2.pdf" target="_blank">Example PDF 2</a></li>
-            <!-- Add more PDFs for Category 2 here -->
-        </ul>
-    </div>
-    <div id="category3" class="category" style="display:none;">
-        <h2>Category 3</h2>
-        <ul>
-            <li><a href="pdfs/example3.pdf" target="_blank">Example PDF 3</a></li>
-            <!-- Add more PDFs for Category 3 here -->
-        </ul>
+        <button onclick="location.href='all_guidelines.html'">All Guidelines</button>
+        <button onclick="location.href='adult_trauma_surgery.html'">Adult Trauma Surgery</button>
+        <button onclick="location.href='head.html'">Head</button>
+        <button onclick="location.href='neck.html'">Neck</button>
+        <button onclick="location.href='chest.html'">Chest</button>
+        <button onclick="location.href='abdomen.html'">Abdomen</button>
+        <button onclick="location.href='pelvis.html'">Pelvis</button>
+        <button onclick="location.href='spine.html'">Spine</button>
+        <button onclick="location.href='extremities.html'">Extremities</button>
+        <button onclick="location.href='other_adult_trauma.html'">Other Adult Trauma</button>
+        <button onclick="location.href='pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
+        <button onclick="location.href='orthopedic_surgery.html'">Orthopedic Surgery</button>
+        <button onclick="location.href='neurosurgery.html'">Neurosurgery</button>
+        <button onclick="location.href='emergency_medicine.html'">Emergency Medicine</button>
+        <button onclick="location.href='ent.html'">ENT</button>
+        <button onclick="location.href='vascular_surgery.html'">Vascular Surgery</button>
+        <button onclick="location.href='administrative.html'">Administrative</button>
+        <button onclick="location.href='outside_resources.html'">Outside Resources</button>
     </div>
 </body>
 
