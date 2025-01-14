@@ -3,10 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Repository</title>
+    <title>Trauma Guidelines</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +39,7 @@
     <p>Please refer to your institution for specific guidelines. This repository serves as a reference only. These
         guidelines are NOT associated with any institution and the institution of the authors is not associated with
         this project.</p>
-    <div>
+    <div class="button-container">
         <button onclick="location.href='all_guidelines.html'">All Guidelines</button>
         <button onclick="location.href='adult_trauma_surgery.html'">Adult Trauma Surgery</button>
         <button onclick="location.href='head.html'">Head</button>
