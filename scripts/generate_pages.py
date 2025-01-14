@@ -38,7 +38,7 @@ category_template = """<!DOCTYPE html>
     <ul>
         <!-- Add PDFs for {title} here -->
     </ul>
-    <button onclick="location.href='index.html'">Back to Home</button>
+    <button onclick="location.href='../index.html'">Back to Home</button>
 </body>
 
 </html>
