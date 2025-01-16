@@ -1,6 +1,8 @@
 import os
+import csv
 
 # Define the categories and their corresponding titles
+# eventually make this categories into a read-in CSV or something
 categories = [
     ("all_guidelines", "All Guidelines"),
     ("adult_trauma_surgery", "Adult Trauma Surgery"),
@@ -21,6 +23,7 @@ categories = [
     ("administrative", "Administrative"),
     ("outside_resources", "Outside Resources")
 ]
+
 
 # Template for the category pages
 category_template = """<!DOCTYPE html>
@@ -43,10 +46,6 @@ category_template = """<!DOCTYPE html>
 </html>
 """
 
-# Create the docs/pages directory if it doesn't exist
-os.makedirs("docs/pages", exist_ok=True)
-
-# Generate the HTML files for each category
 for filename, title in categories:
     if filename == "adult_trauma_surgery":
         content = """
@@ -61,13 +60,35 @@ for filename, title in categories:
             <button onclick="location.href='other_adult_trauma.html'">Other Adult Trauma</button>
         </div>
         """
-    else:
+    elif filename == "outside_resources":
         content = """
-        <ul>
-            <!-- Add PDFs for {title} here -->
-        </ul>
+        <div class="button-container">
+            <button onclick="location.href='https://www.east.org/education-resources/practice-management-guidelines/category/trauma'">EAST PMG</button>
+            <button onclick="location.href='https://www.westerntrauma.org/algorithms.php'">WTA Algorithms</button>
+            <button onclick="location.href='https://www.surgicalcriticalcare.net/guidelines.php'">ORMC Surgical Critical Care Guidelines</button>
+            <button onclick="location.href='https://app.behindtheknife.org/home'">Behind the Knife</button>
+            <button onclick="location.href='https://litfl.com/'">Life in the Fast Lane</button>
+            <button onclick="location.href='https://emcrit.org/category/pulmcrit/'">PulmCrit/EMCrit</button>
+            <button onclick="location.href='https://www.thebottomline.org.uk/'">The Bottom Line</button>
+            <button onclick="location.href='https://rebelem.com/'">RebelEM</button>
+            <button onclick="location.href='https://thetraumapro.com/'">The Trauma Pro</button>
+            <button onclick="location.href='https://intensivecarenetwork.com/'">Intensive Care Network</button>
+            <button onclick="location.href='https://criticalcarereviews.com/index.php'">Critical Care Reviews</button>
+            <button onclick="location.href='https://www.wikijournalclub.org/wiki/Main_Page'">Wiki Journal Club</button>
+            <button onclick="location.href='https://www.orthobullets.com'">Ortho Bullets</button>
+        </div>
         """
+    else:
+        csv_path = f"docs/csvs/{filename}.csv"
+        content = "<ul>\n"
+        if os.path.exists(csv_path):
+            with open(csv_path, newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    text, pdf_path = row
+                    content += f'    <li><a href="{pdf_path}">{text}</a></li>\n'
+        content += "</ul>"
     with open(f"docs/pages/{filename}.html", "w") as file:
         file.write(category_template.format(title=title, content=content))
 
-print("Category pages generated successfully.")
+print("Updated all pages successfully.")
