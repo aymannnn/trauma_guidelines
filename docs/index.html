@@ -16,8 +16,8 @@
 
 <body>
     <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
-    <h1 class="center">Trauma Guidelines</h1>
-    <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
+    <h1>Trauma Guidelines</h1>
+    <p>These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
     <div class="search-container">
         <input type="text" id="search" placeholder="Search guidelines...">
@@ -49,10 +49,14 @@
             const query = document.getElementById('search').value.toLowerCase();
             const buttons = document.querySelectorAll('.button-container button');
             buttons.forEach(button => {
-                if (button.textContent.toLowerCase().includes(query)) {
+                const text = button.textContent.toLowerCase();
+                if (text.includes(query)) {
                     button.style.display = 'block';
+                    const regex = new RegExp(`(${query})`, 'gi');
+                    button.innerHTML = button.textContent.replace(regex, '<span class="highlight">$1</span>');
                 } else {
                     button.style.display = 'none';
+                    button.innerHTML = button.textContent; // Reset the button text
                 }
             });
         }

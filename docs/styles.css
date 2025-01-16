@@ -5,10 +5,12 @@ body {
 
 h1 {
     color: #333;
+    text-align: center;
 }
 
 p {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .search-container {
@@ -50,7 +52,7 @@ p {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px;
+    width: 80px;
     /* Adjust the size as needed */
 }
 
