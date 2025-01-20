@@ -72,7 +72,10 @@
                     if (titleMatch || contentMatch || buttonsMatch) {
                         const highlightedTitle = page.title.replace(regex, '<span class="highlight">$1</span>');
                         const highlightedContent = page.content.replace(regex, '<span class="highlight">$1</span>');
-                        const highlightedButtons = page.buttons.replace(regex, '<span class="highlight">$1</span>');
+                        let highlightedButtons = page.buttons.replace(regex, '<span class="highlight">$1</span>');
+
+                        // Remove "Back to Home" from buttons
+                        highlightedButtons = highlightedButtons.replace(/Back to Home: index.html\s*/gi, '');
 
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
@@ -88,19 +91,13 @@
                         const tempDiv = document.createElement('div');
                         tempDiv.innerHTML = page.content;
                         const links = tempDiv.querySelectorAll('a');
+                        const uniqueLinks = new Set();
                         links.forEach(link => {
                             const linkText = link.innerHTML.replace(regex, '<span class="highlight">$1</span>');
                             const linkHref = link.getAttribute('href');
-                            if (linkHref !== 'index.html') {
+                            if (linkHref !== 'index.html' && !uniqueLinks.has(linkHref)) {
+                                uniqueLinks.add(linkHref);
                                 resultItem.innerHTML += `<div><a href="/trauma_guidelines/${linkHref}">${linkText}</a></div>`;
-                            }
-                        });
-
-                        // Filter out "Back to Home" button
-                        const buttons = resultItem.querySelectorAll('button');
-                        buttons.forEach(button => {
-                            if (button.getAttribute('onclick') === "location.href='index.html'") {
-                                button.remove();
                             }
                         });
 
