@@ -14,13 +14,9 @@ def generate_search_index(base_dir='../docs/pages', output_file='../docs/search-
                     soup = BeautifulSoup(content, 'html.parser')
                     
                     title = soup.title.string if soup.title else 'No title'
-                    bullet_points = []
-                    for li in soup.find_all('li'):
-                        # Remove any links within the bullet points
-                        for a in li.find_all('a'):
-                            a.decompose()
-                        bullet_points.append(li.get_text(separator=' ', strip=True))
-                    bullet_points_text = ' '.join(bullet_points)
+                    
+                    # Extract all text content while preserving some HTML structure
+                    body_content = soup.body.decode_contents() if soup.body else ''
                     
                     # Extract button text and links
                     buttons = []
@@ -33,7 +29,7 @@ def generate_search_index(base_dir='../docs/pages', output_file='../docs/search-
                     index.append({
                         'url': os.path.relpath(file_path, base_dir),
                         'title': title,
-                        'content': bullet_points_text,
+                        'content': body_content,
                         'buttons': buttons_text
                     })
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trauma Guidelines</title>
+    <title>TRAUMA GUIDELINES</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
     <meta name="theme-color" content="#333333">
@@ -61,13 +61,14 @@
                 const response = await fetch('search-index.json');
                 const pages = await response.json();
 
+                const regex = new RegExp(`(${query})`, 'gi');
+
                 pages.forEach(page => {
                     const titleMatch = page.title.toLowerCase().includes(query);
                     const contentMatch = page.content.toLowerCase().includes(query);
                     const buttonsMatch = page.buttons.toLowerCase().includes(query);
 
                     if (titleMatch || contentMatch || buttonsMatch) {
-                        const regex = new RegExp(`(${query})`, 'gi');
                         const highlightedTitle = page.title.replace(regex, '<span class="highlight">$1</span>');
                         const highlightedContent = page.content.replace(regex, '<span class="highlight">$1</span>');
                         const highlightedButtons = page.buttons.replace(regex, '<span class="highlight">$1</span>');
@@ -75,10 +76,10 @@
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                            <a href="pages/${page.url}">
+                            <a href="${page.url}">
                                 <h2>${highlightedTitle}</h2>
-                                <p>${highlightedContent}</p>
-                                <p><strong>Buttons:</strong> ${highlightedButtons}</p>
+                                <div>${highlightedContent}</div>
+                                <div><strong>Buttons:</strong> ${highlightedButtons}</div>
                             </a>
                         `;
                         resultsContainer.appendChild(resultItem);
@@ -89,27 +90,6 @@
 
         document.getElementById('search').addEventListener('input', searchGuidelines);
     </script>
-    <style>
-        .search-results {
-            margin-top: 20px;
-        }
-
-        .result-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .result-item:hover {
-            background-color: #f9f9f9;
-        }
-
-        .highlight {
-            background-color: yellow;
-        }
-    </style>
 </body>
 
 </html>
