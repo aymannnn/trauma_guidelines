@@ -23,7 +23,8 @@
     <div class="search-container">
         <input type="text" id="search" placeholder="Search guidelines..." oninput="searchGuidelines()">
     </div>
-    <div class="button-container">
+    <div id="search-results" class="search-results"></div>
+    <div class="button-container" id="button-container">
         <button onclick="location.href='pages/all_guidelines.html'">All Guidelines</button>
         <button onclick="location.href='pages/adult_trauma_surgery.html'">Adult Trauma Surgery</button>
         <button onclick="location.href='pages/pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
@@ -35,7 +36,6 @@
         <button onclick="location.href='pages/administrative.html'">Administrative</button>
         <button onclick="location.href='pages/outside_resources.html'">Outside Resources</button>
     </div>
-    <div id="search-results" class="search-results"></div>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')
@@ -55,19 +55,26 @@
             debounceTimeout = setTimeout(async () => {
                 const query = document.getElementById('search').value.toLowerCase();
                 const resultsContainer = document.getElementById('search-results');
+                const buttonContainer = document.getElementById('button-container');
                 resultsContainer.innerHTML = ''; // Clear previous results
 
-                if (!query) return;
+                if (!query) {
+                    buttonContainer.style.display = 'block'; // Show buttons if no query
+                    return;
+                }
 
                 const response = await fetch('search-index.json');
                 const pages = await response.json();
 
                 const regex = new RegExp(`(${query})`, 'gi');
 
+                let hasResults = false;
+
                 pages.forEach(page => {
                     const textMatch = page.text.toLowerCase().includes(query);
 
                     if (textMatch) {
+                        hasResults = true;
                         const highlightedText = page.text.replace(regex, '<span class="highlight">$1</span>');
 
                         const resultItem = document.createElement('div');
@@ -79,6 +86,12 @@
                         resultsContainer.appendChild(resultItem);
                     }
                 });
+
+                if (hasResults) {
+                    buttonContainer.style.display = 'none'; // Hide buttons if there are search results
+                } else {
+                    buttonContainer.style.display = 'block'; // Show buttons if no search results
+                }
             }, debounceDelay);
         }
 
