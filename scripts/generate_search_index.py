@@ -14,13 +14,27 @@ def generate_search_index(base_dir='../docs/pages', output_file='../docs/search-
                     soup = BeautifulSoup(content, 'html.parser')
                     
                     title = soup.title.string if soup.title else 'No title'
-                    bullet_points = [li.get_text(separator=' ', strip=True) for li in soup.find_all('li')]
+                    bullet_points = []
+                    for li in soup.find_all('li'):
+                        # Remove any links within the bullet points
+                        for a in li.find_all('a'):
+                            a.decompose()
+                        bullet_points.append(li.get_text(separator=' ', strip=True))
                     bullet_points_text = ' '.join(bullet_points)
+                    
+                    # Extract button text and links
+                    buttons = []
+                    for button in soup.find_all('button'):
+                        button_text = button.get_text(strip=True)
+                        button_link = button.get('onclick', '').replace("location.href='", "").replace("'", "")
+                        buttons.append(f'{button_text}: {button_link}')
+                    buttons_text = ' '.join(buttons)
                     
                     index.append({
                         'url': os.path.relpath(file_path, base_dir),
                         'title': title,
-                        'content': bullet_points_text
+                        'content': bullet_points_text,
+                        'buttons': buttons_text
                     })
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
