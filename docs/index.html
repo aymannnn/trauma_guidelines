@@ -51,7 +51,7 @@
             const resultsContainer = document.getElementById('search-results');
             resultsContainer.innerHTML = ''; // Clear previous results
 
-            const response = await fetch('/search-index.json');
+            const response = await fetch('search-index.json'); // Fixed URL
             const pages = await response.json();
 
             pages.forEach(page => {
