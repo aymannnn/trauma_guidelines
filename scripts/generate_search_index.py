@@ -1,37 +1,20 @@
 import os
+import csv
 import json
-from bs4 import BeautifulSoup
 
-def generate_search_index(base_dir='../docs/pages', output_file='../docs/search-index.json'):
+def generate_search_index(csv_file='all_csv_search.csv', output_file='../docs/search-index.json'):
     index = []
 
-    for root, _, files in os.walk(base_dir):
-        for file in files:
-            if file.endswith('.html'):
-                file_path = os.path.join(root, file)
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    soup = BeautifulSoup(content, 'html.parser')
-                    
-                    title = soup.title.string if soup.title else 'No title'
-                    
-                    # Extract all text content while preserving some HTML structure
-                    body_content = soup.body.decode_contents() if soup.body else ''
-                    
-                    # Extract button text and links
-                    buttons = []
-                    for button in soup.find_all('button'):
-                        button_text = button.get_text(strip=True)
-                        button_link = button.get('onclick', '').replace("location.href='", "").replace("'", "")
-                        buttons.append(f'{button_text}: {button_link}')
-                    buttons_text = ' '.join(buttons)
-                    
-                    index.append({
-                        'url': os.path.relpath(file_path, base_dir),
-                        'title': title,
-                        'content': body_content,
-                        'buttons': buttons_text
-                    })
+    with open(csv_file, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) < 2:
+                continue
+            text, pdf_path = row
+            index.append({
+                'text': text,
+                'url': pdf_path
+            })
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:

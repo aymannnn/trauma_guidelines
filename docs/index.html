@@ -65,39 +65,16 @@
                 const regex = new RegExp(`(${query})`, 'gi');
 
                 pages.forEach(page => {
-                    const titleMatch = page.title.toLowerCase().includes(query);
-                    const contentMatch = page.content.toLowerCase().includes(query);
-                    const buttonsMatch = page.buttons.toLowerCase().includes(query);
+                    const textMatch = page.text.toLowerCase().includes(query);
 
-                    if (titleMatch || contentMatch || buttonsMatch) {
-                        const highlightedTitle = page.title.replace(regex, '<span class="highlight">$1</span>');
-                        const highlightedContent = page.content.replace(regex, '<span class="highlight">$1</span>');
-                        let highlightedButtons = page.buttons.replace(regex, '<span class="highlight">$1</span>');
-
-                        // Remove "Back to Home" from buttons
-                        highlightedButtons = highlightedButtons.replace(/Back to Home: index.html\s*/gi, '');
+                    if (textMatch) {
+                        const highlightedText = page.text.replace(regex, '<span class="highlight">$1</span>');
 
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                        <a href="/trauma_guidelines/${page.url}">
-                            <h2>${highlightedTitle}</h2>
-                        </a>
-                        <div>${highlightedContent}</div>
-                    `;
-                        // Extract and display hyperlinks, excluding "Back to Home"
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = page.content;
-                        const links = tempDiv.querySelectorAll('a');
-                        const uniqueLinks = new Set();
-                        links.forEach(link => {
-                            const linkText = link.innerHTML.replace(regex, '<span class="highlight">$1</span>');
-                            const linkHref = link.getAttribute('href');
-                            if (linkHref !== 'index.html' && !uniqueLinks.has(linkHref)) {
-                                uniqueLinks.add(linkHref);
-                                resultItem.innerHTML += `<div><a href="/trauma_guidelines/${linkHref}">${linkText}</a></div>`;
-                            }
-                        });
+                            <div><a href="/trauma_guidelines/${page.url}">${highlightedText}</a></div>
+                        `;
 
                         resultsContainer.appendChild(resultItem);
                     }

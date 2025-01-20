@@ -45,6 +45,8 @@ category_template = """<!DOCTYPE html>
 </html>
 """
 
+all_csv_outputs = [] # Store all csv outputs for later use
+
 for filename, title in categories:
     if filename == "adult_trauma_surgery":
         content = """
@@ -86,9 +88,14 @@ for filename, title in categories:
                 for row in reader:
                     text, pdf_path = row
                     pdf_path = 'test_pdfs/' + pdf_path
+                    all_csv_outputs.append((text, pdf_path))
                     content += f'    <div><a href="{pdf_path}">{text}</a></div>\n'
         content += "</div>"
     with open(f"../docs/pages/{filename}.html", "w") as file:
         file.write(category_template.format(title=title, content=content))
+
+with open("all_csv_search.csv", "w", newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(all_csv_outputs)
 
 print("Updated all pages successfully.")
