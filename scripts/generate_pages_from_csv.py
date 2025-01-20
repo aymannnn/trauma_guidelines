@@ -86,7 +86,7 @@ for filename, title in categories:
                 reader = csv.reader(csvfile)
                 for row in reader:
                     text, pdf_path = row
-                    pdf_path = 'docs/' + pdf_path
+                    pdf_path = 'docs/test_pdfs/' + pdf_path
                     content += f'    <li><a href="{pdf_path}">{text}</a></li>\n'
         content += "</ul>"
     with open(f"docs/pages/{filename}.html", "w") as file:
