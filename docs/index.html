@@ -16,7 +16,7 @@
 
 <body>
     <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
-    <h1 class="center">Trauma Guidelines</h1>
+    <h1 class="center">TRAUMA GUIDELINES</h1>
     <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
     <div class="search-container">
@@ -55,15 +55,21 @@
             const pages = await response.json();
 
             pages.forEach(page => {
-                if (page.content.toLowerCase().includes(query)) {
+                const titleMatch = page.title.toLowerCase().includes(query);
+                const bulletPoints = page.content.match(/<li>(.*?)<\/li>/g) || [];
+                const bulletMatch = bulletPoints.some(point => point.toLowerCase().includes(query));
+
+                if (titleMatch || bulletMatch) {
                     const regex = new RegExp(`(${query})`, 'gi');
-                    const highlightedContent = page.content.replace(regex, '<span class="highlight">$1</span>');
+                    const highlightedTitle = page.title.replace(regex, '<span class="highlight">$1</span>');
+                    const highlightedBullets = bulletPoints.map(point => point.replace(regex, '<span class="highlight">$1</span>')).join('');
+
                     const resultItem = document.createElement('div');
                     resultItem.className = 'result-item';
                     resultItem.innerHTML = `
-                        <a href="${page.url}">
-                            <h3>${page.title}</h3>
-                            <p>${highlightedContent.substring(0, 150)}...</p>
+                        <a href="pages/${page.url}">
+                            <h3>${highlightedTitle}</h3>
+                            <ul>${highlightedBullets}</ul>
                         </a>
                     `;
                     resultsContainer.appendChild(resultItem);

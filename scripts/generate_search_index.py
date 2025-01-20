@@ -12,13 +12,15 @@ def generate_search_index(base_dir='../docs/pages', output_file='../docs/search-
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
                     soup = BeautifulSoup(content, 'html.parser')
-                    text = soup.get_text(separator=' ', strip=True)
                     
                     title = soup.title.string if soup.title else 'No title'
+                    bullet_points = [li.get_text(separator=' ', strip=True) for li in soup.find_all('li')]
+                    bullet_points_text = ' '.join(bullet_points)
+                    
                     index.append({
                         'url': os.path.relpath(file_path, base_dir),
                         'title': title,
-                        'content': text
+                        'content': bullet_points_text
                     })
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
