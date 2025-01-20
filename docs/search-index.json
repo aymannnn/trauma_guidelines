@@ -2,109 +2,109 @@
   {
     "url": "abdomen.html",
     "title": "Abdomen",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Abdomen</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n<div><a href=\"../test_pdfs/ijgm-16-1695.pdf \">Splenic artery embolization in conservative blunt splenic\n                injury</a></div>\n<div><a href=\"../test_pdfs/13017_2019_Article_274.pdf\">Kidney and Urotrauma</a></div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Abdomen</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n<div><a href=\"/docs/test_pdfs/ijgm-16-1695.pdf \">Splenic artery embolization in conservative blunt splenic\n                injury</a></div>\n<div><a href=\"/docs/test_pdfs/13017_2019_Article_274.pdf\">Kidney and Urotrauma</a></div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "administrative.html",
     "title": "Administrative",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Administrative</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Administrative</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "adult_trauma_surgery.html",
     "title": "Adult Trauma Surgery",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Adult Trauma Surgery</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div class=\"button-container\">\n<button onclick=\"location.href='head.html'\">Head</button>\n<button onclick=\"location.href='neck.html'\">Neck</button>\n<button onclick=\"location.href='chest.html'\">Chest</button>\n<button onclick=\"location.href='abdomen.html'\">Abdomen</button>\n<button onclick=\"location.href='pelvis.html'\">Pelvis</button>\n<button onclick=\"location.href='spine.html'\">Spine</button>\n<button onclick=\"location.href='extremities.html'\">Extremities</button>\n<button onclick=\"location.href='other_adult_trauma.html'\">Other Adult Trauma</button>\n</div>\n",
-    "buttons": "Back to Home: ../index.html Head: head.html Neck: neck.html Chest: chest.html Abdomen: abdomen.html Pelvis: pelvis.html Spine: spine.html Extremities: extremities.html Other Adult Trauma: other_adult_trauma.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Adult Trauma Surgery</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div class=\"button-container\">\n<button onclick=\"location.href='/docs/pages/head.html'\">Head</button>\n<button onclick=\"location.href='/docs/pages/neck.html'\">Neck</button>\n<button onclick=\"location.href='/docs/pages/chest.html'\">Chest</button>\n<button onclick=\"location.href='/docs/pages/abdomen.html'\">Abdomen</button>\n<button onclick=\"location.href='/docs/pages/pelvis.html'\">Pelvis</button>\n<button onclick=\"location.href='/docs/pages/spine.html'\">Spine</button>\n<button onclick=\"location.href='/docs/pages/extremities.html'\">Extremities</button>\n<button onclick=\"location.href='/docs/pages/other_adult_trauma.html'\">Other Adult Trauma</button>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html Head: /docs/pages/head.html Neck: /docs/pages/neck.html Chest: /docs/pages/chest.html Abdomen: /docs/pages/abdomen.html Pelvis: /docs/pages/pelvis.html Spine: /docs/pages/spine.html Extremities: /docs/pages/extremities.html Other Adult Trauma: /docs/pages/other_adult_trauma.html"
   },
   {
     "url": "all_guidelines.html",
     "title": "All Guidelines",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>All Guidelines</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>All Guidelines</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "chest.html",
     "title": "Chest",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Chest</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Chest</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "emergency_medicine.html",
     "title": "Emergency Medicine",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Emergency Medicine</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Emergency Medicine</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "ent.html",
     "title": "ENT",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>ENT</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>ENT</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "extremities.html",
     "title": "Extremities",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Extremities</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Extremities</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "head.html",
     "title": "Head",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Head</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Head</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "neck.html",
     "title": "Neck",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Neck</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Neck</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "neurosurgery.html",
     "title": "Neurosurgery",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Neurosurgery</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Neurosurgery</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "orthopedic_surgery.html",
     "title": "Orthopedic Surgery",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Orthopedic Surgery</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Orthopedic Surgery</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "other_adult_trauma.html",
     "title": "Other Adult Trauma",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Other Adult Trauma</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Other Adult Trauma</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "outside_resources.html",
     "title": "Outside Resources",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Outside Resources</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div class=\"button-container\">\n<button onclick=\"location.href='https://www.east.org/education-resources/practice-management-guidelines/category/trauma'\">EAST\n            PMG</button>\n<button onclick=\"location.href='https://www.westerntrauma.org/algorithms.php'\">WTA Algorithms</button>\n<button onclick=\"location.href='https://www.surgicalcriticalcare.net/guidelines.php'\">ORMC Surgical Critical\n            Care Guidelines</button>\n<button onclick=\"location.href='https://app.behindtheknife.org/home'\">Behind the Knife</button>\n<button onclick=\"location.href='https://litfl.com/'\">Life in the Fast Lane</button>\n<button onclick=\"location.href='https://emcrit.org/category/pulmcrit/'\">PulmCrit/EMCrit</button>\n<button onclick=\"location.href='https://www.thebottomline.org.uk/'\">The Bottom Line</button>\n<button onclick=\"location.href='https://rebelem.com/'\">RebelEM</button>\n<button onclick=\"location.href='https://thetraumapro.com/'\">The Trauma Pro</button>\n<button onclick=\"location.href='https://intensivecarenetwork.com/'\">Intensive Care Network</button>\n<button onclick=\"location.href='https://criticalcarereviews.com/index.php'\">Critical Care Reviews</button>\n<button onclick=\"location.href='https://www.wikijournalclub.org/wiki/Main_Page'\">Wiki Journal Club</button>\n<button onclick=\"location.href='https://www.orthobullets.com'\">Ortho Bullets</button>\n</div>\n",
-    "buttons": "Back to Home: ../index.html EAST\n            PMG: https://www.east.org/education-resources/practice-management-guidelines/category/trauma WTA Algorithms: https://www.westerntrauma.org/algorithms.php ORMC Surgical Critical\n            Care Guidelines: https://www.surgicalcriticalcare.net/guidelines.php Behind the Knife: https://app.behindtheknife.org/home Life in the Fast Lane: https://litfl.com/ PulmCrit/EMCrit: https://emcrit.org/category/pulmcrit/ The Bottom Line: https://www.thebottomline.org.uk/ RebelEM: https://rebelem.com/ The Trauma Pro: https://thetraumapro.com/ Intensive Care Network: https://intensivecarenetwork.com/ Critical Care Reviews: https://criticalcarereviews.com/index.php Wiki Journal Club: https://www.wikijournalclub.org/wiki/Main_Page Ortho Bullets: https://www.orthobullets.com"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Outside Resources</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div class=\"button-container\">\n<button onclick=\"location.href='https://www.east.org/education-resources/practice-management-guidelines/category/trauma'\">EAST PMG</button>\n<button onclick=\"location.href='https://www.westerntrauma.org/algorithms.php'\">WTA Algorithms</button>\n<button onclick=\"location.href='https://www.surgicalcriticalcare.net/guidelines.php'\">ORMC Surgical Critical Care Guidelines</button>\n<button onclick=\"location.href='https://app.behindtheknife.org/home'\">Behind the Knife</button>\n<button onclick=\"location.href='https://litfl.com/'\">Life in the Fast Lane</button>\n<button onclick=\"location.href='https://emcrit.org/category/pulmcrit/'\">PulmCrit/EMCrit</button>\n<button onclick=\"location.href='https://www.thebottomline.org.uk/'\">The Bottom Line</button>\n<button onclick=\"location.href='https://rebelem.com/'\">RebelEM</button>\n<button onclick=\"location.href='https://thetraumapro.com/'\">The Trauma Pro</button>\n<button onclick=\"location.href='https://intensivecarenetwork.com/'\">Intensive Care Network</button>\n<button onclick=\"location.href='https://criticalcarereviews.com/index.php'\">Critical Care Reviews</button>\n<button onclick=\"location.href='https://www.wikijournalclub.org/wiki/Main_Page'\">Wiki Journal Club</button>\n<button onclick=\"location.href='https://www.orthobullets.com'\">Ortho Bullets</button>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html EAST PMG: https://www.east.org/education-resources/practice-management-guidelines/category/trauma WTA Algorithms: https://www.westerntrauma.org/algorithms.php ORMC Surgical Critical Care Guidelines: https://www.surgicalcriticalcare.net/guidelines.php Behind the Knife: https://app.behindtheknife.org/home Life in the Fast Lane: https://litfl.com/ PulmCrit/EMCrit: https://emcrit.org/category/pulmcrit/ The Bottom Line: https://www.thebottomline.org.uk/ RebelEM: https://rebelem.com/ The Trauma Pro: https://thetraumapro.com/ Intensive Care Network: https://intensivecarenetwork.com/ Critical Care Reviews: https://criticalcarereviews.com/index.php Wiki Journal Club: https://www.wikijournalclub.org/wiki/Main_Page Ortho Bullets: https://www.orthobullets.com"
   },
   {
     "url": "pediatric_trauma_surgery.html",
     "title": "Pediatric Trauma Surgery",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Pediatric Trauma Surgery</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Pediatric Trauma Surgery</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "pelvis.html",
     "title": "Pelvis",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Pelvis</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n<div><a href=\"../test_pdfs/13017_2017_Article_117.pdf\">pelvis injury guidelines from the WES</a></div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Pelvis</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n<div><a href=\"/docs/test_pdfs/13017_2017_Article_117.pdf\">pelvis injury guidelines from the WES</a></div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "spine.html",
     "title": "Spine",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Spine</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Spine</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   },
   {
     "url": "vascular_surgery.html",
     "title": "Vascular Surgery",
-    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"../logos/trauma_logo.jpeg\"/>\n<h1>Vascular Surgery</h1>\n<button onclick=\"location.href='../index.html'\">Back to Home</button>\n<div>\n</div>\n",
-    "buttons": "Back to Home: ../index.html"
+    "content": "\n<img alt=\"generic_logo\" class=\"logo\" src=\"/docs/logos/trauma_logo.jpeg\"/>\n<h1>Vascular Surgery</h1>\n<button onclick=\"location.href='/docs/index.html'\">Back to Home</button>\n<div>\n</div>\n",
+    "buttons": "Back to Home: /docs/index.html"
   }
 ]

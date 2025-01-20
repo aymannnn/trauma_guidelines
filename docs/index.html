@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAUMA GUIDELINES</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/docs/manifest.json">
+    <link rel="stylesheet" href="/docs/styles.css">
     <meta name="theme-color" content="#333333">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="logos/trauma_logo.jpeg">
+    <link rel="apple-touch-icon" href="/docs/logos/trauma_logo.jpeg">
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
+    <img src="/docs/logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
     <h1 class="center">TRAUMA GUIDELINES</h1>
     <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
@@ -23,21 +23,21 @@
         <input type="text" id="search" placeholder="Search guidelines..." oninput="searchGuidelines()">
     </div>
     <div class="button-container">
-        <button onclick="location.href='pages/all_guidelines.html'">All Guidelines</button>
-        <button onclick="location.href='pages/adult_trauma_surgery.html'">Adult Trauma Surgery</button>
-        <button onclick="location.href='pages/pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
-        <button onclick="location.href='pages/orthopedic_surgery.html'">Orthopedic Surgery</button>
-        <button onclick="location.href='pages/neurosurgery.html'">Neurosurgery</button>
-        <button onclick="location.href='pages/emergency_medicine.html'">Emergency Medicine</button>
-        <button onclick="location.href='pages/ent.html'">ENT</button>
-        <button onclick="location.href='pages/vascular_surgery.html'">Vascular Surgery</button>
-        <button onclick="location.href='pages/administrative.html'">Administrative</button>
-        <button onclick="location.href='pages/outside_resources.html'">Outside Resources</button>
+        <button onclick="location.href='/docs/pages/all_guidelines.html'">All Guidelines</button>
+        <button onclick="location.href='/docs/pages/adult_trauma_surgery.html'">Adult Trauma Surgery</button>
+        <button onclick="location.href='/docs/pages/pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
+        <button onclick="location.href='/docs/pages/orthopedic_surgery.html'">Orthopedic Surgery</button>
+        <button onclick="location.href='/docs/pages/neurosurgery.html'">Neurosurgery</button>
+        <button onclick="location.href='/docs/pages/emergency_medicine.html'">Emergency Medicine</button>
+        <button onclick="location.href='/docs/pages/ent.html'">ENT</button>
+        <button onclick="location.href='/docs/pages/vascular_surgery.html'">Vascular Surgery</button>
+        <button onclick="location.href='/docs/pages/administrative.html'">Administrative</button>
+        <button onclick="location.href='/docs/pages/outside_resources.html'">Outside Resources</button>
     </div>
     <div id="search-results" class="search-results"></div>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('/docs/service-worker.js')
                 .then(registration => {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 })
@@ -58,7 +58,7 @@
 
                 if (!query) return;
 
-                const response = await fetch('search-index.json');
+                const response = await fetch('/docs/search-index.json');
                 const pages = await response.json();
 
                 const regex = new RegExp(`(${query})`, 'gi');
@@ -78,10 +78,21 @@
                         resultItem.innerHTML = `
                             <a href="${page.url}">
                                 <h2>${highlightedTitle}</h2>
-                                <div>${highlightedContent}</div>
-                                <div><strong>Buttons:</strong> ${highlightedButtons}</div>
                             </a>
+                            <div>${highlightedContent}</div>
+                            <div><strong>Buttons:</strong> ${highlightedButtons}</div>
                         `;
+
+                        // Extract and display hyperlinks
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = page.content;
+                        const links = tempDiv.querySelectorAll('a');
+                        links.forEach(link => {
+                            const linkText = link.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+                            const linkHref = link.getAttribute('href');
+                            resultItem.innerHTML += `<div><a href="${linkHref}">${linkText}</a></div>`;
+                        });
+
                         resultsContainer.appendChild(resultItem);
                     }
                 });
