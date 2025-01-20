@@ -78,7 +78,7 @@ for filename, title in categories:
         </div>
         """
     else:
-        csv_path = f"docs/csvs/{filename}.csv"
+        csv_path = f"../docs/csvs/{filename}.csv"
         content = "<div>\n"
         if os.path.exists(csv_path):
             with open(csv_path, newline='') as csvfile:
