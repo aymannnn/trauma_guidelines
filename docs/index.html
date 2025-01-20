@@ -80,12 +80,16 @@
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                            <a href="/trauma_guidelines/${page.url}">
-                                <h2>${highlightedTitle}</h2>
-                            </a>
-                            <div>${highlightedContent}</div>
-                            <div><strong>Buttons:</strong> ${highlightedButtons}</div>
-                        `;
+                        <a href="/trauma_guidelines/${page.url}">
+                            <h2>${highlightedTitle}</h2>
+                        </a>
+                        <div>${highlightedContent}</div>
+                    `;
+
+                        // Only add the buttons section if there are relevant buttons
+                        if (highlightedButtons.trim()) {
+                            resultItem.innerHTML += `<div><strong>Buttons:</strong> ${highlightedButtons}</div>`;
+                        }
 
                         // Extract and display hyperlinks, excluding "Back to Home"
                         const tempDiv = document.createElement('div');
