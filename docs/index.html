@@ -85,6 +85,21 @@
                         </a>
                         <div>${highlightedContent}</div>
                     `;
+                        // Extract and display hyperlinks, excluding "Back to Home"
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = page.content;
+                        const links = tempDiv.querySelectorAll('a');
+                        const uniqueLinks = new Set();
+                        links.forEach(link => {
+                            const linkText = link.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+                            const linkHref = link.getAttribute('href');
+                            if (linkHref !== 'index.html' && !uniqueLinks.has(linkHref)) {
+                                uniqueLinks.add(linkHref);
+                                resultItem.innerHTML += `<div><a href="/trauma_guidelines/${linkHref}">${linkText}</a></div>`;
+                            }
+                        });
+
+                        resultsContainer.appendChild(resultItem);
                     }
                 });
             }, debounceDelay);
