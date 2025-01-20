@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRAUMA GUIDELINES</title>
+    <title>Trauma Guidelines</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
     <meta name="theme-color" content="#333333">
@@ -16,15 +16,14 @@
 
 <body>
     <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
-    <h1>Trauma Guidelines</h1>
-    <p>These guidelines utilize best clinical practices but are not a substitute for individual
+    <h1 class="center">Trauma Guidelines</h1>
+    <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
     <div class="search-container">
-        <input type="text" id="search" placeholder="Search guidelines...">
-        <button onclick="searchGuidelines()">Search</button>
+        <input type="text" id="search" placeholder="Search guidelines..." oninput="searchGuidelines()">
     </div>
     <div class="button-container">
-        <button onclick="location.href=' pages/all_guidelines.html'">All Guidelines</button>
+        <button onclick="location.href='pages/all_guidelines.html'">All Guidelines</button>
         <button onclick="location.href='pages/adult_trauma_surgery.html'">Adult Trauma Surgery</button>
         <button onclick="location.href='pages/pediatric_trauma_surgery.html'">Pediatric Trauma Surgery</button>
         <button onclick="location.href='pages/orthopedic_surgery.html'">Orthopedic Surgery</button>
@@ -35,6 +34,7 @@
         <button onclick="location.href='pages/administrative.html'">Administrative</button>
         <button onclick="location.href='pages/outside_resources.html'">Outside Resources</button>
     </div>
+    <div id="search-results" class="search-results"></div>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
@@ -45,18 +45,28 @@
                     console.log('ServiceWorker registration failed: ', error);
                 });
         }
-        function searchGuidelines() {
+
+        async function searchGuidelines() {
             const query = document.getElementById('search').value.toLowerCase();
-            const buttons = document.querySelectorAll('.button-container button');
-            buttons.forEach(button => {
-                const text = button.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    button.style.display = 'block';
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            const response = await fetch('/search-index.json');
+            const pages = await response.json();
+
+            pages.forEach(page => {
+                if (page.content.toLowerCase().includes(query)) {
                     const regex = new RegExp(`(${query})`, 'gi');
-                    button.innerHTML = button.textContent.replace(regex, '<span class="highlight">$1</span>');
-                } else {
-                    button.style.display = 'none';
-                    button.innerHTML = button.textContent; // Reset the button text
+                    const highlightedContent = page.content.replace(regex, '<span class="highlight">$1</span>');
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <a href="${page.url}">
+                            <h3>${page.title}</h3>
+                            <p>${highlightedContent.substring(0, 150)}...</p>
+                        </a>
+                    `;
+                    resultsContainer.appendChild(resultItem);
                 }
             });
         }
