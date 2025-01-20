@@ -2,91 +2,109 @@
   {
     "url": "abdomen.html",
     "title": "Abdomen",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "administrative.html",
     "title": "Administrative",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "adult_trauma_surgery.html",
     "title": "Adult Trauma Surgery",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html Head: head.html Neck: neck.html Chest: chest.html Abdomen: abdomen.html Pelvis: pelvis.html Spine: spine.html Extremities: extremities.html Other Adult Trauma: other_adult_trauma.html"
   },
   {
     "url": "all_guidelines.html",
     "title": "All Guidelines",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "chest.html",
     "title": "Chest",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "emergency_medicine.html",
     "title": "Emergency Medicine",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "ent.html",
     "title": "ENT",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "extremities.html",
     "title": "Extremities",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "head.html",
     "title": "Head",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "neck.html",
     "title": "Neck",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "neurosurgery.html",
     "title": "Neurosurgery",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "orthopedic_surgery.html",
     "title": "Orthopedic Surgery",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "other_adult_trauma.html",
     "title": "Other Adult Trauma",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "outside_resources.html",
     "title": "Outside Resources",
-    "content": "EAST PMG WTA Algorithms ORMC Surgical Critical Care Guidelines Behind the Knife Life in the Fast Lane PulmCrit/EMCrit The Bottom Line RebelEM The Trauma Pro Intensive Care Network Critical Care Reviews Wiki Journal Club Ortho Bullets"
+    "content": "",
+    "buttons": "Back to Home: ../index.html EAST\n            PMG: https://www.east.org/education-resources/practice-management-guidelines/category/trauma WTA Algorithms: https://www.westerntrauma.org/algorithms.php ORMC Surgical Critical\n            Care Guidelines: https://www.surgicalcriticalcare.net/guidelines.php Behind the Knife: https://app.behindtheknife.org/home Life in the Fast Lane: https://litfl.com/ PulmCrit/EMCrit: https://emcrit.org/category/pulmcrit/ The Bottom Line: https://www.thebottomline.org.uk/ RebelEM: https://rebelem.com/ The Trauma Pro: https://thetraumapro.com/ Intensive Care Network: https://intensivecarenetwork.com/ Critical Care Reviews: https://criticalcarereviews.com/index.php Wiki Journal Club: https://www.wikijournalclub.org/wiki/Main_Page Ortho Bullets: https://www.orthobullets.com"
   },
   {
     "url": "pediatric_trauma_surgery.html",
     "title": "Pediatric Trauma Surgery",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "pelvis.html",
     "title": "Pelvis",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "spine.html",
     "title": "Spine",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   },
   {
     "url": "vascular_surgery.html",
     "title": "Vascular Surgery",
-    "content": ""
+    "content": "",
+    "buttons": "Back to Home: ../index.html"
   }
 ]
