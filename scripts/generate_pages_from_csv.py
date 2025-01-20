@@ -31,14 +31,14 @@ category_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href = "/docs/">
-    <link rel="stylesheet" href="/styles.css">
+    <base href="/trauma_guidelines/">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <img src="/logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <button onclick="location.href='/index.html'">Back to Home</button>
+    <button onclick="location.href='index.html'">Back to Home</button>
     {content}
 </body>
 
@@ -49,14 +49,14 @@ for filename, title in categories:
     if filename == "adult_trauma_surgery":
         content = """
         <div class="button-container">
-            <button onclick="location.href='/pages/head.html'">Head</button>
-            <button onclick="location.href='/pages/neck.html'">Neck</button>
-            <button onclick="location.href='/pages/chest.html'">Chest</button>
-            <button onclick="location.href='/pages/abdomen.html'">Abdomen</button>
-            <button onclick="location.href='/pages/pelvis.html'">Pelvis</button>
-            <button onclick="location.href='/pages/spine.html'">Spine</button>
-            <button onclick="location.href='/pages/extremities.html'">Extremities</button>
-            <button onclick="location.href='/pages/other_adult_trauma.html'">Other Adult Trauma</button>
+            <button onclick="location.href='pages/head.html'">Head</button>
+            <button onclick="location.href='pages/neck.html'">Neck</button>
+            <button onclick="location.href='pages/chest.html'">Chest</button>
+            <button onclick="location.href='pages/abdomen.html'">Abdomen</button>
+            <button onclick="location.href='pages/pelvis.html'">Pelvis</button>
+            <button onclick="location.href='pages/spine.html'">Spine</button>
+            <button onclick="location.href='pages/extremities.html'">Extremities</button>
+            <button onclick="location.href='pages/other_adult_trauma.html'">Other Adult Trauma</button>
         </div>
         """
     elif filename == "outside_resources":
@@ -85,7 +85,7 @@ for filename, title in categories:
                 reader = csv.reader(csvfile)
                 for row in reader:
                     text, pdf_path = row
-                    pdf_path = '/test_pdfs/' + pdf_path
+                    pdf_path = 'test_pdfs/' + pdf_path
                     content += f'    <div><a href="{pdf_path}">{text}</a></div>\n'
         content += "</div>"
     with open(f"../docs/pages/{filename}.html", "w") as file:
