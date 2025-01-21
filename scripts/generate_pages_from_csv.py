@@ -47,6 +47,8 @@ category_template = """<!DOCTYPE html>
 
 all_csv_outputs = [] # Store all csv outputs for later use
 
+# I actually want to add all of the CSV outputs to "all trauma guidelines"
+
 for filename, title in categories:
     if filename == "adult_trauma_surgery":
         content = """
@@ -79,7 +81,7 @@ for filename, title in categories:
             <button onclick="location.href='https://www.orthobullets.com'">Ortho Bullets</button>
         </div>
         """
-    else:
+    elif filename != "all_guidelines":
         csv_path = f"../docs/csvs/{filename}.csv"
         content = "<div>\n"
         if os.path.exists(csv_path):
@@ -91,8 +93,23 @@ for filename, title in categories:
                     all_csv_outputs.append((text, pdf_path))
                     content += f'    <div><a href="{pdf_path}">{text}</a></div>\n'
         content += "</div>"
+    else:
+        if filename != 'all_guidelines':
+            print(f"Error: {filename} entered this path.")
+        continue
     with open(f"../docs/pages/{filename}.html", "w") as file:
         file.write(category_template.format(title=title, content=content))
+
+# now do all_guidelines
+
+all_content = "div>\n"
+all_csv_outputs.sort(key=lambda x: x[0])
+for text, url in all_csv_outputs:
+    all_content += f'    <div><a href="{url}">{text}</a></div>\n'
+    all_content += "</div>"
+
+with open(f"../docs/pages/all_guidelines.html", "w") as file:
+    file.write(category_template.format(title="All Guidelines", content=all_content))
 
 with open("all_csv_search.csv", "w", newline='') as csvfile:
     writer = csv.writer(csvfile)
