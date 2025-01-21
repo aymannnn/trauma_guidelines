@@ -23,6 +23,17 @@ categories = [
     ("outside_resources", "Outside Resources")
 ]
 
+adult_trauma_surgery_subsets = [
+    "head",
+    "neck", 
+    "chest",
+    "abdomen",
+    "pelvis",
+    "spine",
+    "extremities",
+    "other_adult_trauma"
+]
+
 # Template for the category pages
 category_template = """<!DOCTYPE html>
 <html lang="en">
@@ -39,6 +50,28 @@ category_template = """<!DOCTYPE html>
     <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
     <button onclick="location.href='index.html'">Back to Home</button>
+    {content}
+</body>
+
+</html>
+"""
+
+category_template_adult_trauma_subtypes = """<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <base href="/trauma_guidelines/">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <h1>{title}</h1>
+    <button onclick="location.href='index.html'">Back to Home</button>
+    <button onclick="location.href='pages/adult_trauma_surgery.html'">Back to Adult Trauma Surgery</button>
     {content}
 </body>
 
@@ -98,7 +131,10 @@ for filename, title in categories:
             print(f"Error: {filename} entered this path.")
         continue
     with open(f"../docs/pages/{filename}.html", "w") as file:
-        file.write(category_template.format(title=title, content=content))
+        template = category_template
+        if filename in adult_trauma_surgery_subsets:
+            template = category_template_adult_trauma_subtypes
+        file.write(template.format(title=title, content=content))
 
 # now do all_guidelines
 
