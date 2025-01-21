@@ -102,7 +102,7 @@ for filename, title in categories:
 
 # now do all_guidelines
 
-all_content = "div>\n"
+all_content = "<div>\n"
 all_csv_outputs.sort(key=lambda x: x[0])
 for text, url in all_csv_outputs:
     all_content += f'    <div><a href="{url}">{text}</a></div>\n'
