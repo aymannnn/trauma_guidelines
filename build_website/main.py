@@ -16,9 +16,10 @@ def scrape_website_data_folder_and_build():
     # Read all sub-folders in the website structure path
     index_built = False
     all_guideline_root = None
+    debug_root_dirs_files = []
     for root, dirs, files in os.walk(website_structure_path, topdown=True):
         
-        print(root, dirs, files, '\n')
+        debug_root_dirs_files.append([root, dirs, files])
         
         # remove .gitkeep from files
         
@@ -57,17 +58,18 @@ def scrape_website_data_folder_and_build():
             
     print('Web pages built successfully')    
     
+    print(all_guideline_root)
+    
     if all_guideline_root:
         build_html_all_guidelines(all_guideline_root, search_data)
     else:
         print("Error: 'All Guidelines' directory not found.")
+        print(debug_root_dirs_files)
         sys.exit(1)
     print('All guidelines built successfully')
     generate_search_index(search_data)
     print('Search index built successfully')
     return
-
-scrape_website_data_folder_and_build()
 
 if __name__ == 'main':    
     scrape_website_data_folder_and_build()

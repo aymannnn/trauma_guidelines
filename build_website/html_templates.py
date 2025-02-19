@@ -35,6 +35,7 @@ template_terminal_home_is_lastpage = """<!DOCTYPE html>
     <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
     <button onclick="location.href='index.html'">Back to Home</button>
+    {content}
 </body>
 
 </html>

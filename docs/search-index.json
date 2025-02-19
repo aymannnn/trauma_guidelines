@@ -1,17 +1,5 @@
 [
   {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Head/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Neck/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Chest/.gitkeep"
-  },
-  {
     "text": "Kidney and Uro-Trauma",
     "url": "website_data/Adult Trauma Surgery/Abdomen/Kidney and Uro-Trauma.pdf"
   },
@@ -22,45 +10,5 @@
   {
     "text": "Pelvic Trauma WSES",
     "url": "website_data/Adult Trauma Surgery/Pelvis/Pelvic Trauma WSES.pdf"
-  },
-  {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Spine/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Extremities/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Adult Trauma Surgery/Other Adult Trauma/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Pediatric Trauma Surgery/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Orthopedic Surgery/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Neurosurgery/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Emergency Medicine/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/ENT/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Vascular Surgery/.gitkeep"
-  },
-  {
-    "text": "",
-    "url": "website_data/Administrative/.gitkeep"
   }
 ]

@@ -109,10 +109,13 @@ def build_html_all_guidelines(root, all_guidelines_data):
     t_content = '<div>'
     for guideline in all_guidelines_data:
         pdf_name, pdf_path = guideline
+        print(pdf_name, pdf_path)
         t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
     t_content += "\n</div>"
     
-    with open(EXPORT_PATH + t_title + '.html', 'w') as file:
+    export_path = EXPORT_PATH + t_title + '.html'
+    
+    with open(export_path, 'w') as file:
         file.write(
             template_terminal_home_is_lastpage.format(
                 title=t_title,  
