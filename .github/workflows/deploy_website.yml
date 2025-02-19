@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # just use docs/ directory as the base for the deployment
           path: 'docs'
       - name: Deploy to GitHub Pages
         id: deployment
