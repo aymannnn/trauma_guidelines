@@ -21,13 +21,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r build_website/requirements.txt
 
-    - name: Add .gitkeep files to empty directories
-      run: |
-        python build_website/add_gitkeep.py
-
     - name: Run main.py
       run: |
         python build_website/main.py
+
+    - name: Add .gitkeep files to empty directories
+      run: |
+        python build_website/add_gitkeep.py
 
     - name: Commit and push changes if there are any
       id: commit
