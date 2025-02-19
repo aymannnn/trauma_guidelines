@@ -10,6 +10,7 @@ from generate_search_index import generate_search_index
 
 
 website_structure_path = '../docs/website_data/'
+pages_directory_path = '../docs/pages/'
   
 def scrape_website_data_folder_and_build():
     search_data = []
@@ -17,6 +18,10 @@ def scrape_website_data_folder_and_build():
     index_built = False
     all_guideline_root = None
     debug_root_dirs_files = []
+    
+    # Ensure the /pages/ directory exists
+    os.makedirs(pages_directory_path, exist_ok=True)
+    
     for root, dirs, files in os.walk(website_structure_path, topdown=True):
         
         debug_root_dirs_files.append([root, dirs, files])
