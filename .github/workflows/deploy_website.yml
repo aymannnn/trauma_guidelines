@@ -1,4 +1,4 @@
-name: Update Website (Manual Workflow)
+name: Deploy Only
 
 on:
   workflow_dispatch:
