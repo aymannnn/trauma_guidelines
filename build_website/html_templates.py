@@ -5,7 +5,7 @@ template_terminal = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -27,7 +27,7 @@ template_terminal_home_is_lastpage = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -48,7 +48,7 @@ template_intermediate = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -70,7 +70,7 @@ template_intermediate_home_is_lastpage = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -95,7 +95,7 @@ index_template = Template("""<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAUMA GUIDELINES</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
     <meta name="theme-color" content="#333333">

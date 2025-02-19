@@ -42,7 +42,7 @@ category_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -63,7 +63,7 @@ category_template_adult_trauma_subtypes = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <base href="/trauma_guidelines/">
+    <base href="/">
     <link rel="stylesheet" href="styles.css">
 </head>
 
