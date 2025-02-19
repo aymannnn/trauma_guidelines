@@ -10,5 +10,5 @@ To add a new PDF into the website entry:
 
 # TODOs/Plan
 
-1. Organize folder structure under which the HTML pages will be built
-2. Write a github action to run the scripts
+1. PDF viewer
+2. Update this documentation
