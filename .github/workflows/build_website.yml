@@ -1,4 +1,4 @@
-name: Update Website (Manual Workflow)
+name: Rebuild Website after Changes
 
 on:
   workflow_dispatch:
@@ -42,22 +42,9 @@ jobs:
           echo "No changes to commit"
           echo "::set-output name=changes::false"
         else
-          git commit -m 'Update repository with new build'
+          git commit -m 'Update repository with new build (GitHub Action)'
           git push origin main
           echo "::set-output name=changes::true"
         fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Trigger GitHub Pages Deployment
-      if: steps.commit.outputs.changes == 'true'
-      uses: actions/github-script@v4
-      with:
-        script: |
-          github.rest.repos.createDispatchEvent({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            event_type: 'deploy'
-          })
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
