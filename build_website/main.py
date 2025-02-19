@@ -48,9 +48,11 @@ def scrape_website_data_folder_and_build():
             # include search data since now you have things to search for            
             build_html_terminal_page(root, files, search_data)
     
+    print('Web pages built successfully')    
     build_html_all_guidelines(all_guideline_root, search_data)
+    print('All guidelines built successfully')
     generate_search_index(search_data)
-    
+    print('Search index built successfully')
     return
 
 scrape_website_data_folder_and_build()

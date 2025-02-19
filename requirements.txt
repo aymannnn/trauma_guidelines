@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+pywin32==307
+setuptools==75.1.0
+soupsieve==2.6
+wheel==0.44.0

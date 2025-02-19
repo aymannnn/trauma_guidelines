@@ -5,7 +5,7 @@ import json
 
 def generate_search_index(
     guideline_data, 
-    output_file='../docs/test_search-index.json'):
+    output_file='../docs/search-index.json'):
     index = []
     for data in guideline_data:
         pdf_title = data[0]
@@ -17,4 +17,4 @@ def generate_search_index(
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(index, f, indent=2)
-    print(f'Search index generated successfully and saved to {output_file}')
+    return

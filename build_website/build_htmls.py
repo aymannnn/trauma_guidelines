@@ -1,11 +1,9 @@
 import csv
 from html_templates import *
 
-# TODO: change to pages not test_pages
-
 # Template for the category pages
 
-EXPORT_PATH = '../docs/test_pages/'
+EXPORT_PATH = '../docs/pages/'
 
 def build_html_intermediate_page(root, dirs):
     # OK this is the easiest by far so we start here
@@ -22,11 +20,11 @@ def build_html_intermediate_page(root, dirs):
         use_lastpage = False
     else:
         use_lastpage = True
-        t_lastpage_path = 'test_pages/' + t_lastpage + '.html'
+        t_lastpage_path = 'pages/' + t_lastpage + '.html'
     
     t_content = '<div class="button-container">'
     for d in dirs:
-        t_content += f'\n    ' + template_button.format(path='test_pages/' + d + '.html', text=d)
+        t_content += f'\n    ' + template_button.format(path='pages/' + d + '.html', text=d)
     t_content += "\n</div>"
     
     if use_lastpage:
@@ -69,7 +67,7 @@ def build_html_terminal_page(root, file, search_data):
     t_lastpage_path = ''
     use_lastpage = True
     
-    print(root, t_title, t_lastpage)
+    # print(root, t_title, t_lastpage)
     
     if file == []:
         # empty case
@@ -86,7 +84,7 @@ def build_html_terminal_page(root, file, search_data):
         use_lastpage = False
     else:
         use_lastpage = True
-        t_lastpage_path = 'test_pages/' + t_lastpage + '.html'
+        t_lastpage_path = 'pages/' + t_lastpage + '.html'
 
     if use_lastpage:
         with open(EXPORT_PATH + t_title + '.html', 'w') as file:
@@ -114,7 +112,7 @@ def build_html_all_guidelines(root, all_guidelines_data):
         t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
     t_content += "\n</div>"
     
-    with open(EXPORT_PATH + t_title + 'html', 'w') as file:
+    with open(EXPORT_PATH + t_title + '.html', 'w') as file:
         file.write(
             template_terminal_home_is_lastpage.format(
                 title=t_title,  
