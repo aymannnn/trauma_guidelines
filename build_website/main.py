@@ -18,6 +18,8 @@ def scrape_website_data_folder_and_build():
     all_guideline_root = None
     for root, dirs, files in os.walk(website_structure_path, topdown=True):
         
+        print(root, dirs, files, '\n')
+        
         # normalize path and replace backwards slashes with forward slashes
         
         root = os.path.normpath(root).replace('\\', '/')
@@ -47,15 +49,18 @@ def scrape_website_data_folder_and_build():
             # this considers the case for files OR for empty dirs AND empty files
             # include search data since now you have things to search for            
             build_html_terminal_page(root, files, search_data)
-    
+            
     print('Web pages built successfully')    
-    build_html_all_guidelines(all_guideline_root, search_data)
+    
+    if all_guideline_root:
+        build_html_all_guidelines(all_guideline_root, search_data)
+    else:
+        print("Error: 'All Guidelines' directory not found.")
+        sys.exit(1)
     print('All guidelines built successfully')
     generate_search_index(search_data)
     print('Search index built successfully')
     return
-
-scrape_website_data_folder_and_build()
 
 if __name__ == 'main':    
     scrape_website_data_folder_and_build()
