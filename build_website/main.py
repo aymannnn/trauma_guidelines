@@ -20,6 +20,11 @@ def scrape_website_data_folder_and_build():
         
         print(root, dirs, files, '\n')
         
+        # remove .gitkeep from files
+        
+        if '.gitkeep' in files:
+            files.remove('.gitkeep')
+        
         # normalize path and replace backwards slashes with forward slashes
         
         root = os.path.normpath(root).replace('\\', '/')
@@ -61,6 +66,8 @@ def scrape_website_data_folder_and_build():
     generate_search_index(search_data)
     print('Search index built successfully')
     return
+
+scrape_website_data_folder_and_build()
 
 if __name__ == 'main':    
     scrape_website_data_folder_and_build()
