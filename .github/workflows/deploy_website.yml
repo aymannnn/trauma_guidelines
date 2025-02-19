@@ -1,60 +1,33 @@
-name: Deploy Only
+name: Deploy Website
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [deploy]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r build_website/requirements.txt
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'docs'
 
-    - name: Run main.py
-      run: |
-        python build_website/main.py
-
-    - name: Add .gitkeep files to empty directories
-      run: |
-        python build_website/add_gitkeep.py
-
-    - name: Commit and push changes if there are any
-      id: commit
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add docs/
-        if git diff-index --quiet HEAD --; then
-          echo "No changes to commit"
-          echo "::set-output name=changes::false"
-        else
-          git commit -m 'Update docs with new build'
-          git push origin main
-          echo "::set-output name=changes::true"
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Trigger GitHub Pages Deployment
-      if: steps.commit.outputs.changes == 'true'
-      uses: actions/github-script@v4
-      with:
-        script: |
-          github.rest.repos.createDispatchEvent({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            event_type: 'deploy'
-          })
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
