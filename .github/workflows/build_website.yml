@@ -26,15 +26,32 @@ jobs:
         python build_website/main.py
 
     - name: Commit and push changes if there are any
+      id: commit
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add docs/
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
+          echo "::set-output name=changes::false"
         else
           git commit -m 'Update docs with new build'
           git push origin main
+          echo "::set-output name=changes::true"
         fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Trigger GitHub Pages Deployment
+      if: success() && steps.commit.outputs.changes == 'true'
+      uses: actions/github-script@v4
+      with:
+        script: |
+          github.rest.actions.createWorkflowDispatch({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: 'pages-build-deployment',
+            ref: 'main'
+          })
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
