@@ -45,9 +45,11 @@ def generate_content_from_data_csv(filepath):
     return t_content
 
 def generate_content_from_pdfs(root, file, all_guideline_data): 
-    root_modified = root.replace('../docs/', '')
+    
+    root_modified = root.split('/docs/')[1] # get all AFTER docs
     root_modified += '/' # they end without a forward slash from the os walk
     # pdfs is a list of pdfs
+    
     t_content = "<div>"
     for pdf in file:
         pdf_name = '.'.join(pdf.split('.')[:-1]) # get everything before the .pdf and re-join it together
