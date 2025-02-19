@@ -25,6 +25,10 @@ jobs:
       run: |
         python build_website/main.py
 
+    - name: Add .gitkeep files to empty directories
+      run: |
+        python build_website/add_gitkeep.py
+
     - name: Commit and push changes if there are any
       id: commit
       run: |
