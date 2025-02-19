@@ -1,5 +1,9 @@
 import os
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+docs_path = script_dir + '../docs/'
+website_structure_path = docs_path + 'website_data/'
+
 def add_gitkeep(directory):
     for root, dirs, files in os.walk(directory):
         if not dirs and not files:
@@ -9,5 +13,4 @@ def add_gitkeep(directory):
             print(f'Added .gitkeep to {root}')
 
 if __name__ == '__main__':
-    website_structure_path = '../docs/website_data/'
     add_gitkeep(website_structure_path)

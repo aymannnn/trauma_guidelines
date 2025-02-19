@@ -3,9 +3,7 @@ from html_templates import *
 
 # Template for the category pages
 
-EXPORT_PATH = '../docs/pages/'
-
-def build_html_intermediate_page(root, dirs):
+def build_html_intermediate_page(root, dirs, pages_directory_path):
     # OK this is the easiest by far so we start here
     # will use the template intermediate
     # the os.walk will send the root and the directory list
@@ -28,10 +26,10 @@ def build_html_intermediate_page(root, dirs):
     t_content += "\n</div>"
     
     if use_lastpage:
-        with open(EXPORT_PATH + t_title + '.html', 'w') as file:
+        with open(pages_directory_path + t_title + '.html', 'w') as file:
             file.write(template_intermediate.format(title=t_title, lastpage=t_lastpage, lastpage_path=t_lastpage_path, content=t_content))
     else:
-        with open(EXPORT_PATH + t_title + '.html', 'w') as file:
+        with open(pages_directory_path + t_title + '.html', 'w') as file:
             file.write(template_intermediate_home_is_lastpage.format(title=t_title, content=t_content))
     return
 
@@ -59,7 +57,7 @@ def generate_content_from_pdfs(root, file, all_guideline_data):
     t_content += "\n</div>"
     return t_content
     
-def build_html_terminal_page(root, file, search_data):
+def build_html_terminal_page(root, file, search_data, pages_directory_path):
     # check if file is empty, a CSV, or PDFs
     t_content = None
     t_title = root.split('/')[-1]
@@ -87,7 +85,7 @@ def build_html_terminal_page(root, file, search_data):
         t_lastpage_path = 'pages/' + t_lastpage + '.html'
 
     if use_lastpage:
-        with open(EXPORT_PATH + t_title + '.html', 'w') as file:
+        with open(pages_directory_path + t_title + '.html', 'w') as file:
             file.write(
                 template_terminal.format(
                     title=t_title, 
@@ -95,14 +93,14 @@ def build_html_terminal_page(root, file, search_data):
                     lastpage_path=t_lastpage_path, 
                     content=t_content))        
     else:
-        with open(EXPORT_PATH + t_title + '.html', 'w') as file:
+        with open(pages_directory_path + t_title + '.html', 'w') as file:
             file.write(
                 template_terminal_home_is_lastpage.format(
                     title=t_title, content=t_content))
 
     return search_data
   
-def build_html_all_guidelines(root, all_guidelines_data):
+def build_html_all_guidelines(root, all_guidelines_data, pages_directory_path):
     
     t_title = root.split('/')[-1]
     
@@ -113,9 +111,9 @@ def build_html_all_guidelines(root, all_guidelines_data):
         t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
     t_content += "\n</div>"
     
-    export_path = EXPORT_PATH + t_title + '.html'
+    pages_directory_path = pages_directory_path + t_title + '.html'
     
-    with open(export_path, 'w') as file:
+    with open(pages_directory_path, 'w') as file:
         file.write(
             template_terminal_home_is_lastpage.format(
                 title=t_title,  

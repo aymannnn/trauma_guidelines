@@ -1,11 +1,11 @@
 import os
 import json
 
-# TODO: change to search-index not test_search-index
-
 def generate_search_index(
     guideline_data, 
-    output_file='../docs/search-index.json'):
+    docs_path):
+    
+    output_file = docs_path + '/search-index.json'
     index = []
     for data in guideline_data:
         pdf_title = data[0]
