@@ -31,7 +31,6 @@ def scrape_website_data_folder_and_build():
     # Ensure the /pages/ directory exists
     os.makedirs(pages_directory_path, exist_ok=True)
     
-    
     for root, dirs, files in os.walk(website_structure_path, topdown=True):
         
         debug_root_dirs_files.append([root, dirs, files])

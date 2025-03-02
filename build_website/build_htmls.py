@@ -21,6 +21,9 @@ def build_html_intermediate_page(root, dirs, pages_directory_path):
         t_lastpage_path = 'pages/' + t_lastpage + '.html'
     
     t_content = '<div class="button-container">'
+    
+    dirs.sort() # sort alphabetically
+    
     for d in dirs:
         t_content += f'\n    ' + template_button.format(path='pages/' + d + '.html', text=d)
     t_content += "\n</div>"
@@ -51,11 +54,15 @@ def generate_content_from_pdfs(root, file, all_guideline_data):
     # pdfs is a list of pdfs
     
     t_content = "<div>"
+    
+    file.sort() # sort alphabetically
+    
     for pdf in file:
         pdf_name = '.'.join(pdf.split('.')[:-1]) # get everything before the .pdf and re-join it together
         pdf_path = root_modified + pdf
         all_guideline_data.append((pdf_name, pdf_path))
-        t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>\n'
+        t_content += f'\n    <div><h3>{pdf_name}</h3><iframe src="{pdf_path}" width="100%" height="600px"></iframe></div>\n'
+        #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>\n'
     t_content += "\n</div>"
     return t_content
     
@@ -109,8 +116,9 @@ def build_html_all_guidelines(root, all_guidelines_data, pages_directory_path):
     t_content = '<div>'
     for guideline in all_guidelines_data:
         pdf_name, pdf_path = guideline
-        print(pdf_name, pdf_path)
-        t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
+        # print(pdf_name, pdf_path)
+        t_content += f'\n    <div><h3>{pdf_name}</h3><iframe src="{pdf_path}" width="100%" height="600px"></iframe></div>\n'
+        #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
     t_content += "\n</div>"
     
     pages_directory_path = pages_directory_path + t_title + '.html'
