@@ -4,6 +4,7 @@ def build_index_file(docs_path, dirs):
     # this is just the first index file that will be built with all of the
     # folders in the first
     t_content = ''
+    dirs.sort() # sort alphabetically
     for d in dirs:
         # fixed the indent
         t_content += f'\n        ' + template_button.format(

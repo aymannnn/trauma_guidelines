@@ -61,7 +61,7 @@ def generate_content_from_pdfs(root, file, all_guideline_data):
         pdf_name = '.'.join(pdf.split('.')[:-1]) # get everything before the .pdf and re-join it together
         pdf_path = root_modified + pdf
         all_guideline_data.append((pdf_name, pdf_path))
-        t_content += f'\n    <div><h3>{pdf_name}</h3><iframe src="{pdf_path}" width="100%" height="600px"></iframe></div>\n'
+        t_content += f'\n    <div><h3><a href="{pdf_path}" target="_blank">{pdf_name}</a></h3></div>\n'
         #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>\n'
     t_content += "\n</div>"
     return t_content
@@ -119,7 +119,7 @@ def build_html_all_guidelines(root, all_guidelines_data, pages_directory_path):
     for guideline in all_guidelines_data:
         pdf_name, pdf_path = guideline
         # print(pdf_name, pdf_path)
-        t_content += f'\n    <div><h3>{pdf_name}</h3><iframe src="{pdf_path}" width="100%" height="600px"></iframe></div>\n'
+        t_content += f'\n    <div><h3><a href="{pdf_path}" target="_blank">{pdf_name}</a></h3></div>\n'
         #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>'
     t_content += "\n</div>"
     
