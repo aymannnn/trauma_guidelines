@@ -112,8 +112,10 @@ def build_html_terminal_page(root, file, search_data, pages_directory_path):
 def build_html_all_guidelines(root, all_guidelines_data, pages_directory_path):
     
     t_title = root.split('/')[-1]
-    
     t_content = '<div>'
+    
+    all_guidelines_data.sort()
+
     for guideline in all_guidelines_data:
         pdf_name, pdf_path = guideline
         # print(pdf_name, pdf_path)
