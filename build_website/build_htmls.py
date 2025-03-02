@@ -41,6 +41,8 @@ def generate_content_from_data_csv(filepath):
     t_content = '<div class ="button-container">'
     with open(filepath, newline = '') as file:
         file_data = csv.reader(file)
+        file_data = list(file_data)
+        file_data.sort(key=lambda row :row[0 ])
         for row in file_data:
             text, url = row
             t_content += f'\n    ' + template_button.format(path=url, text=text)
