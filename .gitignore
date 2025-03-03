@@ -4,3 +4,6 @@ __pycache__/
 
 # do NOT ignore repositires with .gitkeep
 !.gitkeep
+
+test_pdf.html
+Kidney and Uro-Trauma.pdf
