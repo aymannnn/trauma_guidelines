@@ -7,8 +7,8 @@
     <title>Pelvic Trauma WSES</title>
     <base href="/trauma_guidelines/">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
 </head>
 
 <body>
@@ -55,8 +55,8 @@
                     console.log('Page rendered');
                 });
             });
-        }, function (reason) {
-            console.error(reason);
+        }).catch(function (reason) {
+            console.error('Error loading PDF:', reason);
         });
     </script>
 </body>
