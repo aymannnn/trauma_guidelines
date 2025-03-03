@@ -18,6 +18,8 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 docs_path = os.path.abspath(os.path.join(script_dir, '../docs/'))
 website_structure_path = os.path.join(docs_path, 'website_data/')
 pages_directory_path = os.path.join(docs_path, 'pages/')
+templates_path = os.path.join(docs_path, 'templates/')
+
   
 def scrape_website_data_folder_and_build():
     search_data = []
@@ -25,8 +27,6 @@ def scrape_website_data_folder_and_build():
     index_built = False
     all_guideline_root = None
     debug_root_dirs_files = []
-    
-    print(script_dir, docs_path, website_structure_path, pages_directory_path)
     
     # Ensure the /pages/ directory exists
     os.makedirs(pages_directory_path, exist_ok=True)
@@ -68,14 +68,20 @@ def scrape_website_data_folder_and_build():
         else:
             # this considers the case for files OR for empty dirs AND empty files
             # include search data since now you have things to search for            
-            build_html_terminal_page(root, files, search_data, pages_directory_path)
+            build_html_terminal_page(root, 
+                                     files, 
+                                     search_data,
+                                     pages_directory_path,
+                                     templates_path)
             
     print('Web pages built successfully')    
     
     print(all_guideline_root)
     
     if all_guideline_root:
-        build_html_all_guidelines(all_guideline_root, search_data, pages_directory_path)
+        build_html_all_guidelines(all_guideline_root, 
+                                  search_data, 
+                                  pages_directory_path)
     else:
         print("Error: 'All Guidelines' directory not found.")
         print(debug_root_dirs_files)

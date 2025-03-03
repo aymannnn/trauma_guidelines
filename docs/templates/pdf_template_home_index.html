@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title</title>
+    <base href="/trauma_guidelines/">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import * as pdfjsLib from './js/pdf.mjs';
+        import './js/pdf.worker.mjs';
+        window.pdfjsLib = pdfjsLib;
+    </script>
+</head>
+
+<body>
+    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <h1>$title</h1>
+    <button onclick="location.href='index.html'">Back to Home</button>
+    <div>
+        <div id="pdf-viewer" style="width: 100%; height: 600px;"></div>
+    </div>
+    <script>
+        var url = '$pdf_url';
+
+        // Asynchronous download of PDF
+        var loadingTask = pdfjsLib.getDocument(url);
+        loadingTask.promise.then(function (pdf) {
+            console.log('PDF loaded');
+
+            // Fetch the first page
+            var pageNumber = 1;
+            pdf.getPage(pageNumber).then(function (page) {
+                console.log('Page loaded');
+
+                var scale = 1.5;
+                var viewport = page.getViewport({ scale: scale });
+
+                // Prepare canvas using PDF page dimensions
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Append canvas to the viewer
+                var viewer = document.getElementById('pdf-viewer');
+                viewer.appendChild(canvas);
+
+                // Render PDF page into canvas context
+                var renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                var renderTask = page.render(renderContext);
+                renderTask.promise.then(function () {
+                    console.log('Page rendered');
+                });
+            });
+        }, function (reason) {
+            console.error(reason);
+        });
+    </script>
+</body>
+
+</html>
