@@ -7,8 +7,9 @@
     <title>TEST PDF</title>
     <base href="/trauma_guidelines/">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs"></script>
+    <script type="module">
+        import pdfjsDist from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/+esm'
+    </script>
 </head>
 
 <body>
