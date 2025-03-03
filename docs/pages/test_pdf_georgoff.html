@@ -8,9 +8,10 @@
     <base href="/trauma_guidelines/">
     <link rel="stylesheet" href="styles.css">
     <script type="module">
-        import pdfjsDist from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/+esm'
+        import * as pdfjsLib from 'js/build/pdf.mjs';
+        import 'js/build/pdf.worker.mjs';
+        window.pdfjsLib = pdfjsLib;
     </script>
-
 </head>
 
 <body>
