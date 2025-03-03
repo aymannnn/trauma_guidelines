@@ -19,8 +19,7 @@
     </div>
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"></script>
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs"></script>
-    <script>
-        console.log("pdfjsLib:", pdfjsLib); //Should show the pdf.js object.
+    <script type='module'>
         var url = 'website_data/Adult Trauma Surgery/Pelvis/Pelvic Trauma WSES.pdf';
 
         // Asynchronous download of PDF
@@ -28,10 +27,21 @@
         loadingTask.promise.then(function (pdf) {
             console.log('PDF loaded');
 
-            // Fetch the first page
-            var pageNumber = 1;
+            // Get the total number of pages
+            var totalPages = pdf.numPages;
+            console.log('Total pages: ' + totalPages);
+
+            // Render each page
+            for (var pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+                renderPage(pdf, pageNumber);
+            }
+        }).catch(function (reason) {
+            console.error('Error loading PDF:', reason);
+        });
+
+        function renderPage(pdf, pageNumber) {
             pdf.getPage(pageNumber).then(function (page) {
-                console.log('Page loaded');
+                console.log('Page ' + pageNumber + ' loaded');
 
                 var scale = 1.5;
                 var viewport = page.getViewport({ scale: scale });
@@ -53,12 +63,10 @@
                 };
                 var renderTask = page.render(renderContext);
                 renderTask.promise.then(function () {
-                    console.log('Page rendered');
+                    console.log('Page ' + pageNumber + ' rendered');
                 });
             });
-        }).catch(function (reason) {
-            console.error('Error loading PDF:', reason);
-        });
+        }
     </script>
 </body>
 
