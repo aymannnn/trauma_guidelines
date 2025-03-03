@@ -71,7 +71,7 @@ def generate_content_from_pdfs(root,
     
     for pdf in file:
         pdf_name = '.'.join(pdf.split('.')[:-1]) # get everything before the .pdf and re-join it together
-        pdf_path = root_modified + pdf
+        pdf_path = '../' + root_modified + pdf
         # modifying PDF path to actually be to the HTML file    
         # generate HTML file for the PDF
         
