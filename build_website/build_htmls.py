@@ -78,8 +78,7 @@ def generate_content_from_pdfs(root,
         pdf_viewer_path = 'pages/' + f'{pdf_name}.html'
         pdf_view_full_path = pages_directory_path + pdf_name + '.html'
     
-        # give the VIEWER data to the all guidelines so it points to the VIEWER
-        # instead of pointing to the raw PDF
+        # the HTML needs to point to the full path of the PDF
         
         all_guideline_data.append(pdf_name)
         
@@ -88,11 +87,11 @@ def generate_content_from_pdfs(root,
         if t_lastpage == 'website_data':
             template_content = template_content.replace('$title', pdf_name).replace('$pdf_url', pdf_path)
         else:
-            template_content = template_content.replace('$title', pdf_name).replace('$pdf_url', pdf_viewer_path).replace('$lastpage', t_lastpage).replace('$lastpath', t_lastpage_path)
+            template_content = template_content.replace('$title', pdf_name).replace('$pdf_url', pdf_path).replace('$lastpage', t_lastpage).replace('$lastpath', t_lastpage_path)
         with open(pdf_view_full_path, 'w') as pdf_viewer_file:
             pdf_viewer_file.write(template_content)
         
-        t_content += f'\n    <div><h3><a href="{pdf_name}.html" target="_blank">{pdf_name}</a></h3></div>\n'
+        t_content += f'\n    <div><h3><a href="{pdf_viewer_path}" target="_blank">{pdf_name}</a></h3></div>\n'
         #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>\n'
     t_content += "\n</div>"
     
