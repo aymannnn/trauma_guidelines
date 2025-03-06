@@ -12,7 +12,7 @@ def generate_search_index(
         pdf_path = data[1]
         index.append({
             'text': pdf_title,
-            'url': pdf_path
+            'url': '/' + pdf_path
         })
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
