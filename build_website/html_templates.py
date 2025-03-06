@@ -160,7 +160,7 @@ index_template = Template("""<!DOCTYPE html>
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                            <div><a href="/${page.url}">${highlightedText}</a></div>
+                            <div><a href="${page.url}">${highlightedText}</a></div>
                         `;
 
                         resultsContainer.appendChild(resultItem);
