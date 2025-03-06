@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAUMA GUIDELINES</title>
     <!-- base href = "/trauma_guidelines/"-->
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
     <meta name="theme-color" content="#333333">
-    <link rel="apple-touch-icon" href="logos/trauma_logo.jpeg">
+    <link rel="apple-touch-icon" href="/logos/trauma_logo.jpeg">
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
+    <img src="/logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
     <h1 class="center">TRAUMA GUIDELINES</h1>
     <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
@@ -22,16 +22,16 @@
     </div>
     <div id="search-results" class="search-results"></div>
     <div class="button-container" id="button-container">
-        <button onclick="location.href='pages/Administrative.html'">Administrative</button>
-        <button onclick="location.href='pages/Adult Trauma Surgery.html'">Adult Trauma Surgery</button>
-        <button onclick="location.href='pages/All Guidelines.html'">All Guidelines</button>
-        <button onclick="location.href='pages/ENT.html'">ENT</button>
-        <button onclick="location.href='pages/Emergency Medicine.html'">Emergency Medicine</button>
-        <button onclick="location.href='pages/Neurosurgery.html'">Neurosurgery</button>
-        <button onclick="location.href='pages/Orthopedic Surgery.html'">Orthopedic Surgery</button>
-        <button onclick="location.href='pages/Outside Resources.html'">Outside Resources</button>
-        <button onclick="location.href='pages/Pediatric Trauma Surgery.html'">Pediatric Trauma Surgery</button>
-        <button onclick="location.href='pages/Vascular Surgery.html'">Vascular Surgery</button>
+        <button onclick="location.href='/pages/Administrative.html'">Administrative</button>
+        <button onclick="location.href='/pages/Adult Trauma Surgery.html'">Adult Trauma Surgery</button>
+        <button onclick="location.href='/pages/All Guidelines.html'">All Guidelines</button>
+        <button onclick="location.href='/pages/ENT.html'">ENT</button>
+        <button onclick="location.href='/pages/Emergency Medicine.html'">Emergency Medicine</button>
+        <button onclick="location.href='/pages/Neurosurgery.html'">Neurosurgery</button>
+        <button onclick="location.href='/pages/Orthopedic Surgery.html'">Orthopedic Surgery</button>
+        <button onclick="location.href='/pages/Outside Resources.html'">Outside Resources</button>
+        <button onclick="location.href='/pages/Pediatric Trauma Surgery.html'">Pediatric Trauma Surgery</button>
+        <button onclick="location.href='/pages/Vascular Surgery.html'">Vascular Surgery</button>
     </div>
     <script>
         if ('serviceWorker' in navigator) {
@@ -77,7 +77,7 @@
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                            <div><a href="/trauma_guidelines/${page.url}">${highlightedText}</a></div>
+                            <div><a href="/${page.url}">${highlightedText}</a></div>
                         `;
 
                         resultsContainer.appendChild(resultItem);
