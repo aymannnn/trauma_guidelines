@@ -6,14 +6,14 @@ template_terminal = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <!-- base href = "/trauma_guidelines/"-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="/logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <button onclick="location.href='index.html'">Back to Home</button>
-    <button onclick="location.href='{lastpage_path}'">Back to {lastpage}</button>
+    <button onclick="location.href='/index.html'">Back to Home</button>
+    <button onclick="location.href='/{lastpage_path}'">Back to {lastpage}</button>
     {content}
 </body>
 
@@ -28,13 +28,13 @@ template_terminal_home_is_lastpage = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <!-- base href="/trauma_guidelines/" -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="/logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <button onclick="location.href='index.html'">Back to Home</button>
+    <button onclick="location.href='/index.html'">Back to Home</button>
     {content}
 </body>
 
@@ -49,14 +49,14 @@ template_intermediate = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <!-- base href = "/trauma_guidelines/"-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
     <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <button onclick="location.href='index.html'">Back to Home</button>
-    <button onclick="location.href='{lastpage_path}'">Back to {lastpage}</button>
+    <button onclick="location.href='/index.html'">Back to Home</button>
+    <button onclick="location.href='/{lastpage_path}'">Back to {lastpage}</button>
     {content}
 </body>
 
@@ -71,20 +71,20 @@ template_intermediate_home_is_lastpage = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <!-- base href = "/trauma_guidelines/"-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
     <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
-    <button onclick="location.href='index.html'">Back to Home</button>
+    <button onclick="location.href='/index.html'">Back to Home</button>
     {content}
 </body>
 
 </html>
 """
 
-template_button = """<button onclick="location.href='{path}'">{text}</button>"""
+template_button = """<button onclick="location.href='/{path}'">{text}</button>"""
 
 from string import Template
 
@@ -96,14 +96,14 @@ index_template = Template("""<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAUMA GUIDELINES</title>
     <!-- base href = "/trauma_guidelines/"-->
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
     <meta name="theme-color" content="#333333">
-    <link rel="apple-touch-icon" href="logos/trauma_logo.jpeg">
+    <link rel="apple-touch-icon" href="/logos/trauma_logo.jpeg">
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
+    <img src="/logos/trauma_logo.jpeg" alt="generic_trauma_logo" class="logo">
     <h1 class="center">TRAUMA GUIDELINES</h1>
     <p class="center">These guidelines utilize best clinical practices but are not a substitute for individual
         judgement.</p>
@@ -157,7 +157,7 @@ index_template = Template("""<!DOCTYPE html>
                         const resultItem = document.createElement('div');
                         resultItem.className = 'result-item';
                         resultItem.innerHTML = `
-                            <div><a href="/trauma_guidelines/${page.url}">${highlightedText}</a></div>
+                            <div><a href="/${page.url}">${highlightedText}</a></div>
                         `;
 
                         resultsContainer.appendChild(resultItem);
