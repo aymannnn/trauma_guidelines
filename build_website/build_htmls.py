@@ -45,7 +45,7 @@ def generate_content_from_data_csv(filepath):
         file_data.sort(key=lambda row :row[0 ])
         for row in file_data:
             text, url = row
-            t_content += f'\n    ' + template_button.format(path=url, text=text)
+            t_content += f'\n    ' + template_button_csv.format(path=url, text=text)
         t_content += "\n</div>"
     return t_content
 
@@ -63,7 +63,7 @@ def generate_content_from_pdfs(root, file, all_guideline_data):
         pdf_name = '.'.join(pdf.split('.')[:-1]) # get everything before the .pdf and re-join it together
         pdf_path = root_modified + pdf
         all_guideline_data.append((pdf_name, pdf_path))
-        t_content += f'\n    <div><h3><a href="{pdf_path}" target="_blank">{pdf_name}</a></h3></div>\n'
+        t_content += f'\n    <div><h3><a href="/{pdf_path}" target="_blank">{pdf_name}</a></h3></div>\n'
         #t_content += f'\n    <div><a href="{pdf_path}">{pdf_name}</a></div>\n'
     t_content += "\n</div>"
     return t_content

@@ -86,6 +86,9 @@ template_intermediate_home_is_lastpage = """<!DOCTYPE html>
 
 template_button = """<button onclick="location.href='/{path}'">{text}</button>"""
 
+# get rid of absolute path here for path so that it goes to website referenced
+template_button_csv = """<button onclick="location.href='{path}'">{text}</button>"""
+
 from string import Template
 
 index_template = Template("""<!DOCTYPE html>
