@@ -71,7 +71,7 @@ template_intermediate_home_is_lastpage = """<!DOCTYPE html>
 </head>
 
 <body>
-    <img src="logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
+    <img src="/logos/trauma_logo.jpeg" alt="generic_logo" class="logo">
     <h1>{title}</h1>
     <button onclick="location.href='/index.html'">Back to Home</button>
     {content}

@@ -10,6 +10,7 @@ def generate_search_index(
     for data in guideline_data:
         pdf_title = data[0]
         pdf_path = data[1]
+        pdf_path = '/' + pdf_path
         index.append({
             'text': pdf_title,
             'url': pdf_path
